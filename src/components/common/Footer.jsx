@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cards from "../../assets/cards.png";
-import language from "../../assets/language.png";
+import language from "../../assets/Language.png";
 import instagram from "../../assets/insta.png";
 import linkedin from "../../assets/linkedin.png";
 
