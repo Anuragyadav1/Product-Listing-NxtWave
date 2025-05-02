@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import ProductCard from "../components/common/ProductCard";
 
 const CATEGORIES = [
   { label: "Men", value: "men's clothing" },
@@ -219,31 +220,7 @@ export default function ProductListing() {
           <section className="flex-1">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col items-center"
-                >
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="h-40 object-contain mb-4"
-                  />
-                  <div className="font-semibold text-sm text-gray-900 mb-2 text-center line-clamp-2 min-h-[3em]">
-                    {product.title}
-                  </div>
-                  {user ? (
-                    <div className="text-gray-700 font-medium text-base">
-                      ${product.price.toFixed(2)}
-                    </div>
-                  ) : (
-                    <div className="text-xs text-gray-500 text-center">
-                      Sign in{" "}
-                      <span className="text-gray-400">
-                        or Create an account to see pricing
-                      </span>
-                    </div>
-                  )}
-                </div>
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </section>
